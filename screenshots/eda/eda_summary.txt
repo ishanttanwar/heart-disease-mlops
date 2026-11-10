@@ -1,0 +1,22 @@
+Rows: 303
+Features: 13 (5 numeric, 8 categorical)
+
+Class balance:
+diagnosis
+No disease    164
+Disease       139
+
+Missing values per feature:
+ca      4
+thal    2
+
+Numeric feature summary:
+          age  trestbps    chol  thalach  oldpeak
+count  303.00    303.00  303.00   303.00   303.00
+mean    54.44    131.69  246.69   149.61     1.04
+std      9.04     17.60   51.78    22.88     1.16
+min     29.00     94.00  126.00    71.00     0.00
+25%     48.00    120.00  211.00   133.50     0.00
+50%     56.00    130.00  241.00   153.00     0.80
+75%     61.00    140.00  275.00   166.00     1.60
+max     77.00    200.00  564.00   202.00     6.20
