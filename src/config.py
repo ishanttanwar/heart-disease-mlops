@@ -75,3 +75,18 @@ FEATURE_DESCRIPTIONS = {
 RANDOM_STATE = 42
 TEST_SIZE = 0.2
 CV_FOLDS = 5
+
+# ---------------------------------------------------------------------------
+# Experiment tracking and model artefacts
+# ---------------------------------------------------------------------------
+MLFLOW_EXPERIMENT = "heart-disease-classification"
+MLFLOW_DB_PATH = PROJECT_ROOT / "mlflow.db"      # runs, params, metrics
+MLFLOW_ARTIFACTS_DIR = PROJECT_ROOT / "mlruns"   # plots and logged models
+REGISTERED_MODEL_NAME = "heart-disease-classifier"
+
+TRAINING_DIR = SCREENSHOTS_DIR / "training"      # comparison table + plots
+MODEL_PATH = MODELS_DIR / "model.joblib"         # final pipeline for serving
+MODEL_METADATA_PATH = MODELS_DIR / "metadata.json"
+
+PRIMARY_METRIC = "roc_auc"   # model selection uses mean CV score on this
+DECISION_THRESHOLD = 0.5     # probability above which we predict disease
