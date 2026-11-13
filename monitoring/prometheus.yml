@@ -1,0 +1,24 @@
+# Prometheus scrape configuration for the heart disease API.
+#
+# Run (from the repo root, with the API already serving on port 8000):
+#   prometheus --config.file=monitoring/prometheus.yml
+# then open http://localhost:9090
+global:
+  scrape_interval: 5s          # fast enough to see a load test appear live
+  evaluation_interval: 15s
+
+rule_files:
+  - alert_rules.yml
+
+scrape_configs:
+  - job_name: heart-disease-api
+    metrics_path: /metrics
+    static_configs:
+      - targets: ["localhost:8000"]
+        labels:
+          service: heart-disease-api
+          env: local
+
+  - job_name: prometheus         # Prometheus scraping itself, useful as a
+    static_configs:              # control when debugging a dead target
+      - targets: ["localhost:9090"]

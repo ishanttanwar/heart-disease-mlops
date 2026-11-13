@@ -23,3 +23,7 @@ mlflow.db
 .DS_Store
 Thumbs.db
 reports/
+data/lock
+data/chunks_head/
+data/wal/
+data/queries.active
