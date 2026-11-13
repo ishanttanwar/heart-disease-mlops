@@ -22,3 +22,4 @@ mlflow.db
 .idea/
 .DS_Store
 Thumbs.db
+reports/
