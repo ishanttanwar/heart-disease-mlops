@@ -46,7 +46,7 @@ def test_predict_returns_prediction_and_confidence(client):
     response = client.post("/predict", json=SAMPLE_PATIENT)
     assert response.status_code == 200
     body = response.json()
-    assert body["prediction"] in (5, 6)
+    assert body["prediction"] in (0, 1)
     assert body["label"] in config.CLASS_LABELS.values()
     assert 0.5 <= body["confidence"] <= 1.0
     assert 0.0 <= body["probability_disease"] <= 1.0
