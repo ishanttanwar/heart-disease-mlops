@@ -1,0 +1,22 @@
+# Optional Ingress (alternative to the LoadBalancer Service) for clusters
+# running an nginx ingress controller. Add "127.0.0.1 heart-api.local" to
+# your hosts file, then browse http://heart-api.local/docs
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: heart-api
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: heart-api.local
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: heart-api
+                port:
+                  number: 80

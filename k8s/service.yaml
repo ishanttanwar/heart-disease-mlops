@@ -1,0 +1,17 @@
+# Service: one stable address in front of the replicas.
+# LoadBalancer works on Docker Desktop and cloud clusters; on Minikube run
+# `minikube tunnel` to get an external IP.
+apiVersion: v1
+kind: Service
+metadata:
+  name: heart-api
+  labels:
+    app: heart-api
+spec:
+  type: LoadBalancer
+  selector:
+    app: heart-api
+  ports:
+    - name: http
+      port: 80          # external port
+      targetPort: 8000  # container port

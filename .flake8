@@ -1,3 +1,4 @@
 [flake8]
 max-line-length = 100
-exclude = .git,__pycache__,.venv,venv,mlruns,notebooks
+exclude = .venv,.git,__pycache__,mlruns,.ipynb_checkpoints,notebooks
+per-file-ignores = src/api/app.py:E402
