@@ -1,0 +1,13 @@
+# Minimal runtime dependencies for the prediction API (used by the Dockerfile).
+# Training/notebook tools (mlflow, matplotlib, jupyter, pytest) are left out
+# to keep the image small. Versions are pinned to match the environment the
+# model was trained in: a pickled scikit-learn pipeline must be loaded with
+# the same scikit-learn version that saved it.
+numpy==2.5.4
+pandas==3.1.1
+scikit-learn==1.9.1
+joblib==1.6.0
+fastapi==0.162.3
+uvicorn==0.54.0
+pydantic==2.14.3
+prometheus-client==0.26.0

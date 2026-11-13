@@ -1,0 +1,23 @@
+# Keep the build context small and the image free of local clutter
+.venv/
+venv/
+.git/
+.github/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Training artefacts and data are not needed at serving time
+mlruns/
+mlflow.db
+data/
+notebooks/
+screenshots/
+report/
+tests/
+k8s/
+monitoring/
+
+*.md
+.DS_Store
